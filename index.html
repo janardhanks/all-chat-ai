@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>ALL CHAT AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>ALL CHAT AI</h1>
+        <p>Compare multiple AI answers in one place</p>
+    </header>
+
+    <main class="container">
+
+        <section class="question-section">
+
+            <h2>Ask Your Question</h2>
+
+            <textarea
+                id="question"
+                placeholder="Type your question here..."
+            ></textarea>
+
+            <h3>Select AI</h3>
+
+            <div class="ai-selection">
+
+                <label>
+                    <input type="checkbox" value="ChatGPT" checked>
+                    ChatGPT
+                </label>
+
+                <label>
+                    <input type="checkbox" value="Gemini" checked>
+                    Gemini
+                </label>
+
+                <label>
+                    <input type="checkbox" value="Perplexity" checked>
+                    Perplexity
+                </label>
+
+            </div>
+
+            <button id="askButton">
+                ASK ALL AI
+            </button>
+
+        </section>
+
+
+        <section class="answers-section">
+
+            <h2>AI Answers</h2>
+
+            <div id="answersContainer">
+
+                <div class="empty-message">
+                    Your AI answers will appear here.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="selected-section">
+
+            <h2>Selected Answer</h2>
+
+            <div id="selectedAnswer">
+                No answer selected.
+            </div>
+
+            <button id="copyButton">
+                COPY SELECTED ANSWER
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>ALL CHAT AI — College Mini Project</p>
+        <p>Developed by Janardhan K S & Jayanth Pal Chakravarthy Y</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
