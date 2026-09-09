@@ -15,20 +15,20 @@ askButton.addEventListener("click", function () {
         return;
     }
 
-    const selectedAIs = document.querySelectorAll(
+    const aiCheckboxes = document.querySelectorAll(
         '.ai-selection input[type="checkbox"]:checked'
     );
 
-    if (selectedAIs.length === 0) {
+    if (aiCheckboxes.length === 0) {
         alert("Please select at least one AI.");
         return;
     }
 
     answersContainer.innerHTML = "";
 
-    selectedAIs.forEach((ai) => {
+    aiCheckboxes.forEach(function (checkbox) {
 
-        const aiName = ai.value;
+        const aiName = checkbox.value;
 
         const card = document.createElement("div");
         card.className = "answer-card";
@@ -37,11 +37,12 @@ askButton.addEventListener("click", function () {
             <h3>${aiName}</h3>
 
             <div class="answer-text">
-                Demo response from ${aiName} for:
+                Demo answer from ${aiName}.
 
-                "${question}"
+                Your question was:
+                ${question}
 
-                Real AI API integration will be added in the next step.
+                Real AI connection will be added next.
             </div>
 
             <button class="select-answer">
@@ -55,38 +56,35 @@ askButton.addEventListener("click", function () {
 
         selectButton.addEventListener("click", function () {
 
-            const answerText = card.querySelector(".answer-text").innerText;
+            selectedText = card.querySelector(".answer-text").innerText;
 
-            selectedText = answerText;
+            selectedAnswer.innerText = selectedText;
 
-            selectedAnswer.innerText = answerText;
-
-            document.querySelectorAll(".answer-card").forEach((item) => {
-                item.style.border = "1px solid #e5e7eb";
+            document.querySelectorAll(".answer-card").forEach(function (otherCard) {
+                otherCard.style.border = "1px solid #e5e7eb";
             });
 
             card.style.border = "2px solid #2563eb";
         });
+
     });
+
 });
 
 
-copyButton.addEventListener("click", async function () {
+copyButton.addEventListener("click", function () {
 
     if (selectedText === "") {
         alert("Please select an answer first.");
         return;
     }
 
-    try {
+    navigator.clipboard.writeText(selectedText)
+        .then(function () {
+            alert("Selected answer copied!");
+        })
+        .catch(function () {
+            alert("Copy failed. Please try again.");
+        });
 
-        await navigator.clipboard.writeText(selectedText);
-
-        alert("Selected answer copied!");
-
-    } catch (error) {
-
-        alert("Unable to copy the answer.");
-
-    }
 });
