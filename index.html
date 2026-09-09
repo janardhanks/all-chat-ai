@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,58 +12,90 @@
 
 <body>
 
+    <!-- Header -->
     <header class="header">
-        <h1>ALL CHAT AI</h1>
+
+        <div class="logo">
+            ALL CHAT <span>AI</span>
+        </div>
+
         <p>Compare multiple AI answers in one place</p>
+
     </header>
+
 
     <main class="container">
 
-        <section class="question-section">
+        <!-- Question Section -->
+        <section class="card">
 
-            <h2>Ask Your Question</h2>
+            <div class="section-title">
+                <h2>Ask Your Question</h2>
+                <span>01</span>
+            </div>
 
             <textarea
                 id="question"
                 placeholder="Type your question here..."
             ></textarea>
 
-            <h3>Select AI</h3>
+
+            <h3>Select AI Services</h3>
 
             <div class="ai-selection">
 
-                <label>
+                <label class="ai-option">
                     <input type="checkbox" value="ChatGPT" checked>
-                    ChatGPT
+                    <span>ChatGPT</span>
                 </label>
 
-                <label>
+                <label class="ai-option">
                     <input type="checkbox" value="Gemini" checked>
-                    Gemini
+                    <span>Gemini</span>
                 </label>
 
-                <label>
+                <label class="ai-option">
                     <input type="checkbox" value="Perplexity" checked>
-                    Perplexity
+                    <span>Perplexity</span>
                 </label>
 
             </div>
 
-            <button id="askButton">
-                ASK ALL AI
-            </button>
+
+            <div class="button-row">
+
+                <button id="askButton" class="primary-button">
+                    ASK ALL AI
+                </button>
+
+                <button id="clearButton" class="secondary-button">
+                    CLEAR
+                </button>
+
+            </div>
 
         </section>
 
 
-        <section class="answers-section">
+        <!-- Answers Section -->
+        <section class="card">
 
-            <h2>AI Answers</h2>
+            <div class="section-title">
+                <h2>AI Answers</h2>
+                <span>02</span>
+            </div>
 
             <div id="answersContainer">
 
                 <div class="empty-message">
-                    Your AI answers will appear here.
+                    <div class="empty-icon">AI</div>
+
+                    <h3>No answers yet</h3>
+
+                    <p>
+                        Enter a question and click
+                        <b>ASK ALL AI</b>.
+                    </p>
                 </div>
 
             </div>
@@ -70,15 +103,19 @@
         </section>
 
 
-        <section class="selected-section">
+        <!-- Selected Answer -->
+        <section class="card selected-card">
 
-            <h2>Selected Answer</h2>
+            <div class="section-title">
+                <h2>Selected Answer</h2>
+                <span>03</span>
+            </div>
 
-            <div id="selectedAnswer">
+            <div id="selectedAnswer" class="selected-answer">
                 No answer selected.
             </div>
 
-            <button id="copyButton">
+            <button id="copyButton" class="copy-button">
                 COPY SELECTED ANSWER
             </button>
 
@@ -88,12 +125,23 @@
 
 
     <footer>
-        <p>ALL CHAT AI — College Mini Project</p>
-        <p>Developed by Janardhan K S & Jayanth Pal Chakravarthy Y</p>
+
+        <strong>ALL CHAT AI</strong>
+
+        <p>
+            College Mini Project
+        </p>
+
+        <p>
+            Janardhan K S &nbsp; | &nbsp;
+            Jayanth Pal Chakravarthy Y
+        </p>
+
     </footer>
 
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
