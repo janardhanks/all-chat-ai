@@ -18,8 +18,7 @@ let selectedText = "";
 
 /* BACKEND URL */
 
-const BACKEND_URL = "http://localhost:3000";
-
+const BACKEND_URL = "https://all-chat-ai-backend.onrender.com";
 
 /* ASK ALL AI */
 
